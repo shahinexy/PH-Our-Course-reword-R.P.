@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Cards from "./component/Cards/Cards";
 import { useState } from "react";
+import Cradits from "./component/Credits/Cradits";
 
 function App() {
   const [datas, setDatas] = useState([])
@@ -19,12 +20,12 @@ function App() {
         </h1>
         <div className="flex gap-5">
           <div className="w-3/4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-5 gap-5">
               <Cards datas={datas}></Cards>
             </div>
           </div>
           <div className="w-1/4">
-            hi
+            <Cradits></Cradits>
           </div>
         </div>
       </div>
