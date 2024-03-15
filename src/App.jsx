@@ -18,14 +18,21 @@ function App() {
   const [price, setPrice] = useState(0);
 
   const handleAddToCart = (details) => {
-    const newName = [...cartName, details.name];
-    setCartName(newName);
+    const isExist = cartName.find(cart => cart == details.name);
+    if(!isExist && credit <= 15){
+      const newName = [...cartName, details.name];
+      setCartName(newName);
+  
+      const newCradit = credit + details.credit;
+      setCradit(newCradit);
+  
+      const newPrice = price + details.price;
+      setPrice(newPrice);
+    }
+    else{
+      alert('Already Exist or maybe 15 credit reached')
+    }
 
-    const newCradit = credit + details.credit;
-    setCradit(newCradit);
-
-    const newPrice = price + details.price;
-    setPrice(newPrice);
   };
   return (
     <>
